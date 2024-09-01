@@ -1,9 +1,12 @@
 <?php 
 require_once ('../src/Login.php');
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 
 session_start();
 
-var_dump($_SESSION);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -16,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Verifica se o usuário está logado ANTES de incluir login.php
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     header('Location: dashboard.php');
-    exit(); // Importante para parar a execução após o redirecionamento
+    exit(); 
 } else { 
     include 'login.php'; 
 }
