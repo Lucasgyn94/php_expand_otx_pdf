@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /expansaOfx/
+
+    # Redirecionar frontend
+    RewriteRule ^frontend/(.*)$ frontend/$1 [L]
+
+    # Se o arquivo/diretório não existir, redirecionar para o index.php da pasta frontend
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ frontend/index.php [L]
+</IfModule>

@@ -1,0 +1,15 @@
+{
+    "name": "lucas/expansa-ofx",
+    "autoload": {
+        "psr-4": {
+            "Lucas\\ExpansaOfx\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucas Ferreira Da Silva",
+            "email": "needslucas944@gmail.com"
+        }
+    ],
+    "require": {}
+}
